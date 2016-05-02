@@ -9,7 +9,9 @@
 import UIKit
 
 class MasterViewController: UITableViewController {
-
+    
+    var ordinances: [String]?
+    var descriptions: [String]?
     var detailViewController: DetailViewController? = nil
     var objects = [AnyObject]()
 
@@ -17,6 +19,23 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        ordinances = [
+            "Baptism",
+            "Confirmation",
+            "Ordination to the Priesthood",
+            "Blessing the bread",
+            "Blessing the water",
+            "Naming and blessing children",
+            "The blessing of sick people",
+            "Consecrating oil",
+            "Father's blessing",
+            "Dedicating graves"
+        ]
+        
+        descriptions = [
+            
+        ]
+        
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
